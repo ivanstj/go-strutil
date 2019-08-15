@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/torden/go-strutil"
+	"github.com/ivanstj/go-strutil"
 )
 
 func Example_strutils_AddSlashes() {
@@ -470,7 +470,7 @@ func Example_strutils_StripTags() {
 <section class="page-header">
 <h1 class="project-name">Just! a String Processing Library for Go-lang</h1>
 <h2 class="project-tagline">Just a few methods for helping processing and validation the string</h2>
-<a href="https://github.com/torden/go-strutil" class="btn">View on GitHub</a>
+<a href="https://github.com/ivanstj/go-strutil" class="btn">View on GitHub</a>
 </section>
 <section class="main-content">
 <h1 id="just-a-string-processing-library-for-go-lang">Just! a String Processing Library for Go-lang</h1>

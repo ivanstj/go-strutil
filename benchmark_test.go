@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	humanize "github.com/dustin/go-humanize"
-	"github.com/torden/go-strutil"
+	"github.com/ivanstj/go-strutil"
 )
 
 /*

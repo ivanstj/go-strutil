@@ -3,7 +3,7 @@ package strutils_test
 import (
 	"testing"
 
-	"github.com/torden/go-strutil"
+	"github.com/ivanstj/go-strutil"
 )
 
 func ipaddrTest(t *testing.T, cktype int, dataset map[string]bool, errfmt string) {

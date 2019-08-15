@@ -3,13 +3,26 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:ee7fe6a68ba9f21bc748293d4e1e66ad327f64a89b0f5ba2d021430babd4b8c9"
   name = "github.com/dustin/go-humanize"
   packages = ["."]
+  pruneopts = "UT"
   revision = "bb3d318650d48840a39aa21a027c6630e198e626"
+
+[[projects]]
+  digest = "1:9befe228949bfb0dde0c08a83a9983cf9fc6b8cca55c139fc114db74e4c0f9d5"
+  name = "github.com/ivanstj/go-strutil"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "73aed51365c0409e5f8e4448206bac66972182f2"
+  version = "v0.1.4"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "a5d65a2bdf47e41b99ad71813142ae93970f5806c77630b2aea665fe631dde23"
+  input-imports = [
+    "github.com/dustin/go-humanize",
+    "github.com/ivanstj/go-strutil",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1

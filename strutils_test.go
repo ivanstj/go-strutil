@@ -1,7 +1,7 @@
 package strutils_test
 
 import (
-	"github.com/torden/go-strutil"
+	"github.com/ivanstj/go-strutil"
 )
 
 var assert = strutils.NewAssert()

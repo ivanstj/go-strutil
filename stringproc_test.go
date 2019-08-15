@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	strutils "github.com/torden/go-strutil"
+	strutils "github.com/ivanstj/go-strutil"
 )
 
 func Test_strutils_AddSlashes(t *testing.T) {
@@ -448,26 +448,26 @@ func Test_strutils_HumanByteSize(t *testing.T) {
 
 	dataset := map[interface{}]string{
 		1.7976931348623157e+308: "152270531428124968725096603469261934082567927321390584004196605238063615198482718997460353589210907119043200911085747810785909744915680620242659147418948017662928903247753430023357200398869394856103928002466673473125884404826265988290381563441726944871732658253337089007918982991007711232.00Yb",
-		1170:                    "1.14Kb",
-		72125099:                "68.78Mb",
-		3276537856:              "3.05Gb",
-		27:                      "27.00B",
-		93735736:                "89.39Mb",
-		937592:                  "915.62Kb",
-		6715287:                 "6.40Mb",
-		2856906752:              "2.66Gb",
-		7040152:                 "6.71Mb",
-		22016:                   "21.50Kb",
-		"1170":                  "1.14Kb",
-		"72125099":              "68.78Mb",
-		"3276537856":            "3.05Gb",
-		"27":                    "27.00B",
-		"93735736":              "89.39Mb",
-		"937592":                "915.62Kb",
-		"6715287":               "6.40Mb",
-		"2856906752":            "2.66Gb",
-		"7040152":               "6.71Mb",
-		"22016":                 "21.50Kb",
+		1170:         "1.14Kb",
+		72125099:     "68.78Mb",
+		3276537856:   "3.05Gb",
+		27:           "27.00B",
+		93735736:     "89.39Mb",
+		937592:       "915.62Kb",
+		6715287:      "6.40Mb",
+		2856906752:   "2.66Gb",
+		7040152:      "6.71Mb",
+		22016:        "21.50Kb",
+		"1170":       "1.14Kb",
+		"72125099":   "68.78Mb",
+		"3276537856": "3.05Gb",
+		"27":         "27.00B",
+		"93735736":   "89.39Mb",
+		"937592":     "915.62Kb",
+		"6715287":    "6.40Mb",
+		"2856906752": "2.66Gb",
+		"7040152":    "6.71Mb",
+		"22016":      "21.50Kb",
 		3.40282346638528859811704183484516925440e+38:                                   "288230358971842560.00Yb",
 		"12121212121212121212121212121212121212121211212121212211212121212121.1234e+3": "0.00NaN",
 	}
@@ -1078,8 +1078,8 @@ func Test_strutils_DecodeUnicodeEntities(t *testing.T) {
 	var retval string
 	var err error
 
-	tmpStrUnicodeEntityEncodedOneLine := "%uC548%uB155%uD558%uC138%uC694.%20%20%uBC29%uAC11%uC2B5%uB2C8%uB2E4.%20%20%uAC10%uC0AC%uD569%uB2C8%uB2E4.%20%20%u304A%u306F%u3088%u3046%u3054%u3056%u3044%u307E%u3059%20%u3053%u3093%u306B%u3061%u306F%uFF0E%20%u3053%u3093%u3070%u3093%u306F%uFF0E%20%u304A%u3084%u3059%u307F%u306A%u3055%u3044%uFF0E%20%u3042%u308A%u304C%u3068%u3046%u3054%u3056%u3044%u307E%u3059%20%u4F60%u597D%20%u518D%u898B%20%u8C22%u8C22%21%u0E2A%u0E27%u0E31%u0E2A%u0E14%u0E35%u0E04%u0E23%u0E31%u0E1A%20%u0E41%u0E25%u0E49%u0E27%u0E40%u0E08%u0E2D%u0E01%u0E31%u0E19%u0E04%u0E23%u0E31%u0E1A%20%u0E02%u0E2D%u0E1A%u0E04%u0E38%u0E13%u0E04%u0E23%u0E31%u0E1A%20%u0421%u0430%u0439%u043D%20%u0431%u0430%u0439%u043D%u0430%u0443%u0443"
-	tmpStrUnicodeEntityEncodedMultipleLine := "%uC548%uB155%uD558%uC138%uC694.%0A%uBC29%uAC11%uC2B5%uB2C8%uB2E4.%0A%uAC10%uC0AC%uD569%uB2C8%uB2E4.%0A%u304A%u306F%u3088%u3046%u3054%u3056%u3044%u307E%u3059%0A%u3053%u3093%u306B%u3061%u306F%uFF0E%0A%u3053%u3093%u3070%u3093%u306F%uFF0E%0A%u304A%u3084%u3059%u307F%u306A%u3055%u3044%uFF0E%0A%u3042%u308A%u304C%u3068%u3046%u3054%u3056%u3044%u307E%u3059%0A%u4F60%u597D%0A%u518D%u898B%0A%u8C22%u8C22%21%u0E2A%u0E27%u0E31%u0E2A%u0E14%u0E35%u0E04%u0E23%u0E31%u0E1A%0A%u0E41%u0E25%u0E49%u0E27%u0E40%u0E08%u0E2D%u0E01%u0E31%u0E19%u0E04%u0E23%u0E31%u0E1A%0A%u0E02%u0E2D%u0E1A%u0E04%u0E38%u0E13%u0E04%u0E23%u0E31%u0E1A%0A%u0421%u0430%u0439%u043D%20%u0431%u0430%u0439%u043D%u0430%u0443%u0443"
+	tmpStrUnicodeEntityEncodedOneLine := `\uC548\uB155\uD558\uC138\uC694.\20\20\uBC29\uAC11\uC2B5\uB2C8\uB2E4.\20\20\uAC10\uC0AC\uD569\uB2C8\uB2E4.\20\20\u304A\u306F\u3088\u3046\u3054\u3056\u3044\u307E\u3059\20\u3053\u3093\u306B\u3061\u306F\uFF0E\20\u3053\u3093\u3070\u3093\u306F\uFF0E\20\u304A\u3084\u3059\u307F\u306A\u3055\u3044\uFF0E\20\u3042\u308A\u304C\u3068\u3046\u3054\u3056\u3044\u307E\u3059\20\u4F60\u597D\20\u518D\u898B\20\u8C22\u8C22\21\u0E2A\u0E27\u0E31\u0E2A\u0E14\u0E35\u0E04\u0E23\u0E31\u0E1A\20\u0E41\u0E25\u0E49\u0E27\u0E40\u0E08\u0E2D\u0E01\u0E31\u0E19\u0E04\u0E23\u0E31\u0E1A\20\u0E02\u0E2D\u0E1A\u0E04\u0E38\u0E13\u0E04\u0E23\u0E31\u0E1A\20\u0421\u0430\u0439\u043D\20\u0431\u0430\u0439\u043D\u0430\u0443\u0443`
+	tmpStrUnicodeEntityEncodedMultipleLine := `\uC548\uB155\uD558\uC138\uC694.\0A\uBC29\uAC11\uC2B5\uB2C8\uB2E4.\0A\uAC10\uC0AC\uD569\uB2C8\uB2E4.\0A\u304A\u306F\u3088\u3046\u3054\u3056\u3044\u307E\u3059\0A\u3053\u3093\u306B\u3061\u306F\uFF0E\0A\u3053\u3093\u3070\u3093\u306F\uFF0E\0A\u304A\u3084\u3059\u307F\u306A\u3055\u3044\uFF0E\0A\u3042\u308A\u304C\u3068\u3046\u3054\u3056\u3044\u307E\u3059\0A\u4F60\u597D\0A\u518D\u898B\0A\u8C22\u8C22\21\u0E2A\u0E27\u0E31\u0E2A\u0E14\u0E35\u0E04\u0E23\u0E31\u0E1A\0A\u0E41\u0E25\u0E49\u0E27\u0E40\u0E08\u0E2D\u0E01\u0E31\u0E19\u0E04\u0E23\u0E31\u0E1A\0A\u0E02\u0E2D\u0E1A\u0E04\u0E38\u0E13\u0E04\u0E23\u0E31\u0E1A\0A\u0421\u0430\u0439\u043D\20\u0431\u0430\u0439\u043D\u0430\u0443\u0443`
 
 	retval, err = strproc.DecodeUnicodeEntities(tmpStrUnicodeEntityEncodedOneLine)
 	assert.AssertNil(t, err, "Error : %v", err)
@@ -1224,7 +1224,7 @@ README.md haven’t contain all the examples. Please refer to the the XXXtest.go
 <section class="page-header">
 <h1 class="project-name">Just! a String Processing Library for Go-lang</h1>
 <h2 class="project-tagline">Just a few methods for helping processing and validation the string</h2>
-<a href="https://github.com/torden/go-strutil" class="btn">View on GitHub</a>
+<a href="https://github.com/ivanstj/go-strutil" class="btn">View on GitHub</a>
 </section>
 <section class="main-content">
 <h1 id="just-a-string-processing-library-for-go-lang">Just! a String Processing Library for Go-lang</h1>
@@ -1249,7 +1249,7 @@ README.md haven’t contain all the examples. Please refer to the the XXXtest.go
 &lt;section class=&quot;page-header&quot;&gt;
 &lt;h1 class=&quot;project-name&quot;&gt;Just! a String Processing Library for Go-lang&lt;/h1&gt;
 &lt;h2 class=&quot;project-tagline&quot;&gt;Just a few methods for helping processing and validation the string&lt;/h2&gt;
-&lt;a href=&quot;https://github.com/torden/go-strutil&quot; class=&quot;btn&quot;&gt;View on GitHub&lt;/a&gt;
+&lt;a href=&quot;https://github.com/ivanstj/go-strutil&quot; class=&quot;btn&quot;&gt;View on GitHub&lt;/a&gt;
 &lt;/section&gt;
 &lt;section class=&quot;main-content&quot;&gt;
 &lt;h1 id=&quot;just-a-string-processing-library-for-go-lang&quot;&gt;Just! a String Processing Library for Go-lang&lt;/h1&gt;

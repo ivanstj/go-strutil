@@ -878,7 +878,7 @@ func (s *StringProc) DecodeUnicodeEntities(val string) (string, error) {
 	l := len(val)
 	for i := 0; i < l; i++ {
 
-		if val[i] == 37 && val[i+1] == 117 && l >= i+6 { // % + u
+		if val[i] == 92 && val[i+1] == 117 && l >= i+6 { // / + u
 
 			var tmpval []byte
 			tmpval = append(tmpval, val[i+2], val[i+3], val[i+4], val[i+5])
@@ -890,9 +890,9 @@ func (s *StringProc) DecodeUnicodeEntities(val string) (string, error) {
 
 			tmprune := []byte(string(rune(runeval)))
 			tmpret = append(tmpret, tmprune...)
-			i += 5 //jump %uXXXX
+			i += 5 //jump /uXXXX
 
-		} else if val[i] == 37 { //control character or other
+		} else if val[i] == 92 { //control character or other
 			tmpret = append(tmpret, s.unHex(val[i+1])<<4|s.unHex(val[i+2]))
 			i += 2
 		} else {
@@ -904,7 +904,7 @@ func (s *StringProc) DecodeUnicodeEntities(val string) (string, error) {
 }
 
 // DecodeURLEncoded Decodes URL-encoded string (including unicode entities)
-// NOTE : golang.url.unescape not support unicode entities (%uXXXX)
+// NOTE : golang.url.unescape not support unicode entities (/uXXXX)
 func (s *StringProc) DecodeURLEncoded(val string) (string, error) {
 
 	var tmpret []byte

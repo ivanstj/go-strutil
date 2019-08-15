@@ -5,10 +5,10 @@ Just Several methods for helping processing/handling the string in Go (go-lang)
 README.md haven't contain all the examples. Please refer to the the XXXtest.go files.
 
 [![Build Status](https://travis-ci.org/torden/go-strutil.svg?branch=master)](https://travis-ci.org/torden/go-strutil)
-[![Go Report Card](https://goreportcard.com/badge/github.com/torden/go-strutil)](https://goreportcard.com/report/github.com/torden/go-strutil)
-[![GoDoc](https://godoc.org/github.com/torden/go-strutil?status.svg)](https://godoc.org/github.com/torden/go-strutil)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ivanstj/go-strutil)](https://goreportcard.com/report/github.com/ivanstj/go-strutil)
+[![GoDoc](https://godoc.org/github.com/ivanstj/go-strutil?status.svg)](https://godoc.org/github.com/ivanstj/go-strutil)
 [![Coverage Status](https://coveralls.io/repos/github/torden/go-strutil/badge.svg?branch=master)](https://coveralls.io/github/torden/go-strutil?branch=master)
-[![Go Walker](http://gowalker.org/api/v1/badge)](https://gowalker.org/github.com/torden/go-strutil)
+[![Go Walker](http://gowalker.org/api/v1/badge)](https://gowalker.org/github.com/ivanstj/go-strutil)
 [![GitHub version](https://badge.fury.io/gh/torden%2Fgo-strutil.svg)](https://badge.fury.io/gh/torden%2Fgo-strutil)
 
 ## Table of Contents
@@ -66,11 +66,11 @@ README.md haven't contain all the examples. Please refer to the the XXXtest.go f
 
 ## Installation
 
-`go get github.com/torden/go-strutil`, import it as `"github.com/torden/go-strutil"`, use it as `StringProc or StringValidator`
+`go get github.com/ivanstj/go-strutil`, import it as `"github.com/ivanstj/go-strutil"`, use it as `StringProc or StringValidator`
 
 ## Examples
 
-See the [Example Source](https://github.com/torden/go-strutil/blob/master/example_test.go) for more details
+See the [Example Source](https://github.com/ivanstj/go-strutil/blob/master/example_test.go) for more details
 
 ## Processing Methods
 
@@ -561,7 +561,7 @@ example_str := `
 <section class="page-header">
 <h1 class="project-name">Just! a String Processing Library for Go-lang</h1>
 <h2 class="project-tagline">Just a few methods for helping processing and validation the string</h2>
-<a href="https://github.com/torden/go-strutil" class="btn">View on GitHub</a>
+<a href="https://github.com/ivanstj/go-strutil" class="btn">View on GitHub</a>
 </section>
 <section class="main-content">
 <h1 id="just-a-string-processing-library-for-go-lang">Just! a String Processing Library for Go-lang</h1>
