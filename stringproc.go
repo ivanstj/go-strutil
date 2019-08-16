@@ -892,6 +892,9 @@ func (s *StringProc) DecodeUnicodeEntities(val string) (string, error) {
 			tmpret = append(tmpret, tmprune...)
 			i += 5 //jump /uXXXX
 
+		} else if val[i] == 92 && val[i+1] == 34 {
+			tmpret = append(tmpret, []byte("\\\"")...)
+			i++
 		} else if val[i] == 92 { //control character or other
 			tmpret = append(tmpret, s.unHex(val[i+1])<<4|s.unHex(val[i+2]))
 			i += 2
