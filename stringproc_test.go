@@ -1093,6 +1093,8 @@ func Test_strutils_DecodeUnicodeEntities(t *testing.T) {
 \u0E02\u0E2D\u0E1A\u0E04\u0E38\u0E13\u0E04\u0E23\u0E31\u0E1A
 \u0421\u0430\u0439\u043D \u0431\u0430\u0439\u043D\u0430\u0443\u0443`
 
+	tmpStrQuotes := `\"`
+
 	retval, err = strproc.DecodeUnicodeEntities(tmpStrUnicodeEntityEncodedOneLine)
 	assert.AssertNil(t, err, "Error : %v", err)
 	assert.AssertEquals(t, retval, str_oneline_ok, "Return Value mismatch.\nExpected: %v\nActual: %v", retval, str_oneline_ok)
@@ -1100,6 +1102,10 @@ func Test_strutils_DecodeUnicodeEntities(t *testing.T) {
 	retval, err = strproc.DecodeUnicodeEntities(tmpStrUnicodeEntityEncodedMultipleLine)
 	assert.AssertNil(t, err, "Error : %v", err)
 	assert.AssertEquals(t, retval, str_mutipleline_ok, "Return Value mismatch.\nExpected: %v\nActual: %v", retval, str_mutipleline_ok)
+
+	retval, err = strproc.DecodeUnicodeEntities(tmpStrQuotes)
+	assert.AssertNil(t, err, "Error : %v", err)
+	assert.AssertEquals(t, retval, tmpStrQuotes, "Return Value mismatch.\nExpected: %v\nActual: %v", retval, tmpStrQuotes)
 }
 
 func Test_strutils_DecodeURLEncoded(t *testing.T) {
