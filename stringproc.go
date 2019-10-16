@@ -22,6 +22,7 @@ import (
 var numericPattern = regexp.MustCompile(`^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$`)
 var tagElementsPattern = regexp.MustCompile(`(?ims)(?P<tag><(/*\s*|\?*|\!*)(figcaption|expression|blockquote|plaintext|textarea|progress|optgroup|noscript|noframes|menuitem|frameset|fieldset|!DOCTYPE|datalist|colgroup|behavior|basefont|summary|section|isindex|details|caption|bgsound|article|address|acronym|strong|strike|source|select|script|output|option|object|legend|keygen|ilayer|iframe|header|footer|figure|dialog|center|canvas|button|applet|video|track|title|thead|tfoot|tbody|table|style|small|param|meter|layer|label|input|frame|embed|blink|audio|aside|alert|time|span|samp|ruby|meta|menu|mark|main|link|html|head|form|font|code|cite|body|base|area|abbr|xss|xml|wbr|var|svg|sup|sub|pre|nav|map|kbd|ins|img|div|dir|dfn|del|col|big|bdo|bdi|!--|ul|tt|tr|th|td|rt|rp|ol|li|hr|em|dt|dl|dd|br|u|s|q|p|i|b|a|(h[0-9]+))([^><]*)([><]*))`)
 var whiteSpacePattern = regexp.MustCompile(`(?im)\s{2,}`)
+var trailingSpacePattern = regexp.MustCompile(`(?im)\n{1,}`)
 var entityEncodedPattern = regexp.MustCompile(`(?ims)(&(?:[a-z0-9]{2,8}|#[0-9]{2,3});)`)
 var urlEncodedPattern = regexp.MustCompile(`(?ims)(%[a-zA-Z0-9]{2})`)
 
@@ -989,7 +990,10 @@ END:
 	cleanedStr := tagElementsPattern.ReplaceAllString(str, "")
 
 	//remove multiple whitespace
-	cleanedStr = whiteSpacePattern.ReplaceAllString(cleanedStr, "\n")
+	cleanedStr = trailingSpacePattern.ReplaceAllString(cleanedStr, " ")
+
+	//remove multiple whitespace
+	cleanedStr = whiteSpacePattern.ReplaceAllString(cleanedStr, " ")
 
 	return cleanedStr, nil
 }
