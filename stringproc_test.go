@@ -1217,15 +1217,7 @@ func Test_strutils_StripTags(t *testing.T) {
 
 	t.Parallel()
 
-	str_ok := `
-Just! a String Processing Library for Go-lang
-Just! a String Processing Library for Go-lang
-Just a few methods for helping processing and validation the string
-View on GitHub
-Just! a String Processing Library for Go-lang
-Just a few methods for helping processing the string
-README.md haven’t contain all the examples. Please refer to the the XXXtest.go files.
-`
+	str_ok := ` Just! a String Processing Library for Go-lang Just! a String Processing Library for Go-lang Just a few methods for helping processing and validation the string View on GitHub Just! a String Processing Library for Go-lang Just a few methods for helping processing the string README.md haven’t contain all the examples. Please refer to the the XXXtest.go files. `
 
 	str_original_html := `
 <!DOCTYPE html>
